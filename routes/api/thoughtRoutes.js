@@ -18,6 +18,7 @@ router.route("/").post(createThought).delete(deleteThought).get(getAllThoughts);
 router.route("/:thoughtId").put(updateThoughtById).get(getThoughtById);
 
 // api routes for Reactions
+// the router auto-formats this way whenever I save for some reason
 router
   .route("/:thoughtId/reactions")
   .post(createReaction)
