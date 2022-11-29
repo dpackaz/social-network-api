@@ -6,13 +6,13 @@ const {
   updateUser,
   deleteUser,
   getOneUser,
-  getAllUsers,
+  getUsers,
   addFriend,
   deleteFriend,
 } = require("../../controllers/userController");
 
 // api routes for Users
-router.route("/").post(createUser).get(getAllUsers);
+router.route("/").post(createUser).get(getUsers);
 
 // api routes for User by id
 router.route("/:userId").put(updateUser).delete(deleteUser).get(getOneUser);
