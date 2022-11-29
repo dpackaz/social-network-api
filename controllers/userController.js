@@ -63,4 +63,42 @@ module.exports = {
         res.status(500).json(err);
       });
   },
+  // add Friend to a user
+  addFriend(req, res) {
+    User.findOne({ _id: req.params.friendId })
+      .select("-__v")
+      .then((friend) => {
+        if (!friend) {
+          res.status(404).json({ message: "friend not found" });
+        } else {
+          User.findOneAndUpdate({ _id: req.params.userId }),
+            { $push: { friends: friend } },
+            { new: true }.then((user) => {
+              user
+                ? res.json(user)
+                : res.status(404).json({ message: "user not found" });
+            });
+        }
+      });
+  },
+  // delete Friend from user
+  deleteFriend(req, res) {
+    User.findOne({ _id: req.params.friendId })
+      .select("-__v")
+      .then((friend) => {
+        if (!friend) {
+          res.status(404).json({ message: "friend not found" });
+        } else {
+          User.updateOne(
+            { _id: req.params.userId },
+            { $pullAll: { friends: [{ _id: req.params.friendId }] } },
+            { new: true }
+          ).then((user) => {
+            user
+              ? res.json(user)
+              : res.status(404).json({ message: "user not found" });
+          });
+        }
+      });
+  },
 };
