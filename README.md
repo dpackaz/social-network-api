@@ -11,8 +11,6 @@ This project creates an API endpoint for the front end of a social media site. A
 - [Description](#description)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Credits](#credits)
-- [Contributing](#contributing)
 - [License](#license)
 - [Questions](#questions)
 
