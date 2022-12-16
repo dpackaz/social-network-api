@@ -28,7 +28,7 @@ They may also use Insomina to examine the routes.
 
 ## Usage
 
-[Functionality Demonstration Video](placeholder)
+[Functionality Demonstration Video](https://drive.google.com/file/d/1kVejp8RG7e8-JI8phdN4-VjmfzLPtQ8q/view)
 
 To view the code functionality, a user must simply follow the above link and watch the video displaying the functionality of the routes.
 
