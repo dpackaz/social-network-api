@@ -12,7 +12,7 @@ const {
 } = require("../../controllers/userController");
 
 // api routes for Users
-router.route("/").post(createUser).get(getUsers);
+router.route("/").get(getUsers).post(createUser);
 
 // api routes for User by id
 router.route("/:userId").put(updateUser).delete(deleteUser).get(getOneUser);
